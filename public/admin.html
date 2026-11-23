@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Админ-панель — Norm</title>
+<link rel="stylesheet" href="/admin.css">
+</head>
+<body>
+<div id="login" class="login" hidden>
+  <form id="loginForm">
+    <h1>Norm <small>админ-панель</small></h1>
+    <label>Пароль<input type="password" id="pw" autocomplete="current-password" required></label>
+    <button class="btn">Войти</button>
+    <p class="err" id="loginErr"></p>
+  </form>
+</div>
+
+<div id="app" hidden>
+  <header>
+    <b>Norm · админ</b>
+    <nav id="tabs">
+      <button data-t="orders">Заказы</button><button data-t="designs">Дизайны</button><button data-t="settings">Цены и настройки</button><button data-t="tees">Фото заготовок</button><button data-t="site">Фото сайта</button>
+    </nav>
+    <span><a href="/" target="_blank">Сайт</a> <button id="logout" class="link">Выйти</button></span>
+  </header>
+  <main>
+
+    <section id="t-orders" hidden>
+      <div class="stats" id="stats"></div>
+      <label class="inline">Показать: <select id="filter"></select></label>
+      <div id="orders"></div>
+    </section>
+
+    <section id="t-designs" hidden>
+      <h2>Дизайн автора</h2>
+      <form id="dForm" class="card">
+        <input type="hidden" id="dId">
+        <div class="grid3">
+          <label>Название (рус)<input id="dRu" maxlength="80" required></label>
+          <label>Название (uz)<input id="dUz" maxlength="80"></label>
+          <label>Название (en)<input id="dEn" maxlength="80"></label>
+        </div>
+        <div class="grid3">
+          <label>Доплата за дизайн, сум<input type="number" id="dExtra" min="0" value="0"></label>
+          <label>Фото (PNG с прозрачным фоном лучше всего)<input type="file" id="dFile" accept="image/*"></label>
+          <label class="chk"><input type="checkbox" id="dPub" checked> Показывать на сайте</label>
+        </div>
+        <div><button class="btn">Сохранить дизайн</button> <button type="button" class="btn ghost" id="dCancel" hidden>Отмена</button> <span id="dMsg" class="muted"></span></div>
+      </form>
+      <div class="cards" id="dList"></div>
+    </section>
+
+    <section id="t-settings" hidden>
+      <h2>Цены</h2>
+      <div class="card grid4" id="fPrices"></div>
+      <h2>Цвета футболок</h2>
+      <div class="card" id="fColors"></div>
+      <h2>Размеры и контакты</h2>
+      <div class="card grid3" id="fMisc"></div>
+      <h2>Тексты на сайте</h2>
+      <div class="card" id="fTexts"></div>
+      <p><button class="btn" id="saveSettings">Сохранить настройки</button> <span id="sMsg" class="muted"></span></p>
+    </section>
+
+    <section id="t-site" hidden>
+      <h2>Фото сайта</h2>
+      <p class="muted">Эти фото появляются на главной странице. Пустые блоки на сайте не показываются.</p>
+      <div class="card"><b>Главное фото (фон первого экрана)</b><div id="sHero"></div></div>
+      <h2>Lookbook (до 8 фото)</h2>
+      <div class="card"><div class="thumbs" id="sLook"></div></div>
+      <h2>О бренде</h2>
+      <div class="card"><div class="grid3" id="sAbout"></div><b>Фото процесса (до 4: вышивка, печать, упаковка…)</b><div class="thumbs" id="sProc"></div></div>
+      <p><button class="btn" id="saveSite">Сохранить</button> <span id="siteMsg" class="muted"></span></p>
+    </section>
+
+    <section id="t-tees" hidden>
+      <h2>Фото заготовок и область нанесения</h2>
+      <p class="muted">Загрузите фото каждой футболки спереди и сзади: ровный фон, дневной свет. Красная рамка показывает, где на фото будет рисунок. Подвиньте её цифрами.</p>
+      <div id="teeList"></div>
+      <p><button class="btn" id="saveTees">Сохранить</button> <span id="tMsg" class="muted"></span></p>
+    </section>
+  </main>
+</div>
+<script src="/admin.js"></script>
+</body>
+</html>

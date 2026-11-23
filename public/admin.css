@@ -1,0 +1,53 @@
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:#f3f2ee;color:#16213a}
+[hidden]{display:none!important}
+.login{min-height:100vh;display:grid;place-items:center}
+.login form{background:#fff;padding:28px;border-radius:8px;width:min(360px,92vw);display:grid;gap:14px;box-shadow:0 2px 12px #0001}
+.login h1{margin:0;font-size:24px}.login small{font-size:13px;font-weight:400;color:#5d6477}
+header{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:#16213a;color:#efede8;padding:10px 20px;position:sticky;top:0;z-index:5}
+header nav{display:flex;gap:6px;flex-wrap:wrap}
+header nav button{background:none;border:0;color:#efede8;padding:8px 12px;border-radius:4px;cursor:pointer;font:inherit}
+header nav button[aria-pressed="true"]{background:#c0344d}
+header a,.link{color:#efede8;background:none;border:0;cursor:pointer;font:inherit;text-decoration:underline;margin-left:10px}
+main{max-width:1000px;margin:0 auto;padding:20px}
+h2{margin:26px 0 10px;font-size:20px}
+label{display:grid;gap:4px;font-size:13px;font-weight:600}
+label.chk{display:flex;align-items:center;gap:8px;align-self:end;padding-bottom:10px}
+label.inline{display:inline-flex;grid-auto-flow:column;align-items:center;gap:8px;margin:12px 0}
+input,select,textarea{font:inherit;padding:9px;border:1px solid #c9c5bb;border-radius:4px;background:#fff;width:100%}
+input[type=checkbox]{width:auto}
+input[type=color]{padding:2px;height:38px;width:60px}
+.btn{background:#c0344d;color:#fff;border:0;border-radius:4px;padding:10px 18px;font:inherit;font-weight:700;cursor:pointer}
+.btn.ghost{background:none;color:#16213a;border:1px solid #16213a}
+.btn.sm{padding:6px 12px;font-size:13px}
+.btn.del{background:#fff;color:#c0344d;border:1px solid #c0344d}
+.card{background:#fff;border-radius:8px;padding:16px;display:grid;gap:14px;box-shadow:0 1px 6px #0001}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media (max-width:720px){.grid3,.grid4{grid-template-columns:1fr 1fr}}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:16px}
+.cards .card img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:4px;background:#e4e1da}
+.muted{color:#5d6477;font-size:13px}.err{color:#c0344d;margin:0}
+.warn{background:#fff3cd;padding:10px 14px;border-radius:6px}
+.stats{display:flex;gap:10px;flex-wrap:wrap}
+.stat{background:#fff;border-radius:8px;padding:10px 16px;box-shadow:0 1px 6px #0001}
+.stat b{display:block;font-size:22px}
+.order{background:#fff;border-radius:8px;margin-bottom:10px;box-shadow:0 1px 6px #0001}
+.order>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:90px 1fr auto auto;gap:10px;padding:12px 16px;align-items:center}
+.order>summary::-webkit-details-marker{display:none}
+.badge{font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px;background:#e4e1da}
+.badge.new{background:#c0344d;color:#fff}.badge.done{background:#cfe8d5}.badge.cancelled{background:#ddd;color:#777}
+.det{padding:0 16px 16px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:720px){.det{grid-template-columns:1fr}.order>summary{grid-template-columns:1fr auto}}
+.det img{max-width:100%;border-radius:6px;background:#e4e1da}
+.det pre{white-space:pre-wrap;margin:0;font:inherit}
+.row{display:grid;grid-template-columns:1fr 1.4fr 1.4fr 1.4fr auto auto;gap:8px;align-items:end;margin-bottom:8px}
+@media (max-width:720px){.row{grid-template-columns:1fr 1fr}}
+.tee{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media (max-width:720px){.tee{grid-template-columns:1fr}}
+.pv{position:relative;width:100%;max-width:220px;aspect-ratio:1;background:#e4e1da;border-radius:6px;overflow:hidden}
+.pv img{width:100%;height:100%;object-fit:contain;display:block}
+.pv i{position:absolute;border:2px solid #c0344d;background:#c0344d22}
+
+.thumbs{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-start}
+.thumb{width:120px;display:grid;gap:6px}
+.thumb img{width:120px;height:150px;object-fit:cover;border-radius:6px;background:#e4e1da}
